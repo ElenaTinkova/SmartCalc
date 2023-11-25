@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>412</width>
+    <height>412</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>690</width>
+    <height>412</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Rubik</family>
+    <pointsize>16</pointsize>
+    <italic>false</italic>
+    <bold>false</bold>
+    <kerning>false</kerning>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Calculator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icons.qrc">
+    <normaloff>:/misc/rus/calculator-172.png</normaloff>:/misc/rus/calculator-172.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	color: black;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 16pt;
+	font-weight: 400;
+}</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <widget class="QLineEdit" name="result_display">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>391</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>.AppleSystemUIFont</family>
+      <pointsize>20</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	font: 20pt &quot;.AppleSystemUIFont&quot;;
+	color: #4E4B78;
+	background-color: #F2F1FF;
+	border: 1px transparent;
+	border-radius: 8px;
+}</string>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>256</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="but_1">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+    <property name="shortcut">
+     <string>1</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_2">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+    <property name="shortcut">
+     <string>2</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_3">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+    <property name="shortcut">
+     <string>3</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_0">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>350</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="shortcut">
+     <string>0</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="dot">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>350</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>.</string>
+    </property>
+    <property name="shortcut">
+     <string>.</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="equals">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>350</y>
+      <width>108</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #E6EAFF;
+	background-color:  #5B5B8F;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #4F4F7D;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>=</string>
+    </property>
+    <property name="shortcut">
+     <string>=</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="val_X">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+    <property name="shortcut">
+     <string>X</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="plus">
+    <property name="geometry">
+     <rect>
+      <x>351</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+    <property name="shortcut">
+     <string>+</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="minus">
+    <property name="geometry">
+     <rect>
+      <x>351</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+    <property name="shortcut">
+     <string>-</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_6">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>6</string>
+    </property>
+    <property name="shortcut">
+     <string>6</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_5">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>5</string>
+    </property>
+    <property name="shortcut">
+     <string>5</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+    <property name="shortcut">
+     <string>4</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="multiply">
+    <property name="geometry">
+     <rect>
+      <x>351</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>*</string>
+    </property>
+    <property name="shortcut">
+     <string>*</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_9">
+    <property name="geometry">
+     <rect>
+      <x>294</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>9</string>
+    </property>
+    <property name="shortcut">
+     <string>9</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_8">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>8</string>
+    </property>
+    <property name="shortcut">
+     <string>8</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="but_7">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #5B5B8F;
+	background-color: #E8E7FC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+    </property>
+    <property name="text">
+     <string>7</string>
+    </property>
+    <property name="shortcut">
+     <string>7</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="divide">
+    <property name="geometry">
+     <rect>
+      <x>351</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Rubik</family>
+      <pointsize>16</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="accessibleName">
+     <string>/</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="division_icon" resource="icons.qrc">
+      <normaloff>:/misc/rus/division_icon.png</normaloff>:/misc/rus/division_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>/</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="rBrace">
+    <property name="geometry">
+     <rect>
+      <x>237</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>)</string>
+    </property>
+    <property name="shortcut">
+     <string>)</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="lBrace">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>(</string>
+    </property>
+    <property name="shortcut">
+     <string>(</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_log">
+    <property name="geometry">
+     <rect>
+      <x>66</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>log</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_scale">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="accessibleName">
+     <string>^</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/misc/rus/exponent_icon.png</normaloff>:/misc/rus/exponent_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>14</width>
+      <height>14</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>^</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_ln">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>298</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>ln</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_atan">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>atan</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_acos">
+    <property name="geometry">
+     <rect>
+      <x>66</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>acos</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_asin">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>246</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>asin</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_tan">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>tan</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_cos">
+    <property name="geometry">
+     <rect>
+      <x>66</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>cos</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_sin">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>194</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>sin</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="mod">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>mod</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="backspace">
+    <property name="geometry">
+     <rect>
+      <x>66</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/misc/rus/backspace_icon_151584.png</normaloff>:/misc/rus/backspace_icon_151584.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Backspace</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="clear">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>142</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>AC</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="graph">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>108</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>graph</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="f_sqrt">
+    <property name="geometry">
+     <rect>
+      <x>123</x>
+      <y>350</y>
+      <width>52</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>52</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="accessibleName">
+     <string>square</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #A8A4F4;
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/misc/rus/square_root_icon.png</normaloff>:/misc/rus/square_root_icon.png</iconset>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">buttonGroup</string>
+    </attribute>
+   </widget>
+   <widget class="QLineEdit" name="expression_display">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>391</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Rubik</family>
+      <pointsize>16</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	color: #4E4B78;
+	background-color: #F2F1FF;
+	border: 1px transparent;
+	border-radius: 8px;
+}</string>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>256</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>30</y>
+      <width>251</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::MarkdownText</enum>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="hello_puppy.qrc">:/hello_puppy.jpeg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icons.qrc"/>
+  <include location="hello_puppy.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
