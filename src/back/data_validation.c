@@ -9,8 +9,7 @@ int string_validation(char *input, char *string) {
   int error = 0, float_dot = 0;
   check_spaces(input, string);
   if (check_comma_with_dot(string)) error = 1;
-  int str_len = strlen(string);
-  if (str_len < MIN_STR_SIZE) error = 1;
+  //  int str_len = strlen(string);
   if (!error) error = check_braces(string);
 
   if (!error) {

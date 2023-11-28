@@ -25,8 +25,6 @@ void destroy_stack(calc_stack **stack) {
   while (*stack) pop(stack);
 }
 
-int is_stack_empty(calc_stack *stack) { return stack == NULL; }
-
 void parser(calc_stack **stack, char *string) {
   while (*string != '\0') {
     if (is_number(*string)) {
@@ -166,9 +164,9 @@ calc_stack *polish_stack(calc_stack **stack) {
   return output;
 }
 
-long double calc_result(calc_stack *rpn) {
+double calc_result(calc_stack *rpn) {
   calc_stack *result = NULL;
-  long double res = 0, a = 0, b = 0;
+  double res = 0, a = 0, b = 0;
   while (rpn) {
     if (rpn->next && rpn->next->next && rpn->data_type == Number &&
         rpn->next->data_type == Number &&
@@ -223,17 +221,11 @@ double binary_operation(double a, double b, int type) {
   } else if (type == Multiply) {
     a *= b;
   } else if (type == Division) {
-    if (b != 0) {
-      a /= b;
-    } else
-      exit(1);  // ! Division by zero !
+    a /= b;
   } else if (type == Pow) {
     a = pow(a, b);
   } else if (type == Mod) {
-    if (b != 0)
-      a = fmod(a, b);
-    else
-      exit(1);
+    a = fmod(a, b);
   }
   return a;
 }
@@ -260,4 +252,14 @@ double unary_operation(double a, int type) {
   else if (type == Log)
     a = log10(a);
   return a;
+}
+
+void stack_with_x(calc_stack **stack, double x) {
+  while (*stack) {
+    if ((*stack)->data_type == X) {
+      (*stack)->value = x;
+      (*stack)->data_type = Number;
+    }
+    stack = &(*stack)->next;
+  }
 }

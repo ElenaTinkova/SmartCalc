@@ -42,8 +42,9 @@ calc_stack *reverse_stack(calc_stack **stack);
 void print_stack(calc_stack *stack);
 int add_number(char *string, char *num);
 calc_stack *polish_stack(calc_stack **stack);
-long double calc_result(calc_stack *rpn);
+double calc_result(calc_stack *rpn);
 double binary_operation(double a, double b, int data_type);
 double unary_operation(double a, int type);
+void stack_with_x(calc_stack **stack, double x);
 
 #endif

@@ -4,7 +4,7 @@
 int main() {
   int error = 0;
   char string[256] = {0};
-  char *example = "jgjghg";
+  char *example = "10+x";
   error = string_validation(example, string);
   if (!error) {
     calc_stack *first = NULL, *reversed_first = NULL;
@@ -15,8 +15,9 @@ int main() {
     rpn = polish_stack(&reversed_first);
     output = reverse_stack(&rpn);
     // print_stack(output);
-    long double res = calc_result(output);
-    printf("res is: %.12Lf", res);
+    stack_with_x(&output, 3);
+    double res = calc_result(output);
+    printf("%.11f", res);
   }
 
   return 0;

@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 
-#include "ui_mainwindow.h"
 #include <QPixmap>
+
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -9,10 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
   QPixmap picture(":/hello_puppy.jpeg");
   int wP = ui->label->width();
   int hP = ui->label->height();
-
-
-
-
   ui->label->setPixmap(picture.scaled(wP, hP, Qt::KeepAspectRatio));
 
   connect(ui->but_0, SIGNAL(released()), this, SLOT(NumPressed()));
@@ -41,7 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->f_atan, SIGNAL(released()), this, SLOT(FuncsPressed()));
   connect(ui->f_ln, SIGNAL(released()), this, SLOT(FuncsPressed()));
   connect(ui->f_log, SIGNAL(released()), this, SLOT(FuncsPressed()));
-  //connect(ui->f_sqrt, SIGNAL(released()), this, SLOT(FuncsPressed()));
 
   connect(ui->backspace, SIGNAL(released()), this, SLOT(BackspaceDeletion()));
   connect(ui->clear, SIGNAL(released()), this, SLOT(ClearAllDeletion()));
@@ -85,15 +81,21 @@ void MainWindow::BackspaceDeletion() {
     else if (resultNow.endsWith("sin(") || resultNow.endsWith("cos(") ||
              resultNow.endsWith("tan(") || resultNow.endsWith("log("))
       resultNow.chop(4);
-    else if (resultNow.endsWith("ln(") || resultNow.endsWith("mod"))
+    else if (resultNow.endsWith("ln(") || resultNow.endsWith("mod") ||
+             resultNow.endsWith("inf") || resultNow.endsWith("nan"))
       resultNow.chop(3);
-    else
+    else if (resultNow.endsWith("input")) {
+      resultNow.chop(13);
+    } else
       resultNow.chop(1);
     if (resultNow == "")
       ui->result_display->setText((QString)'0');
     else
       ui->result_display->setText(resultNow);
   }
+  if (ui->expression_display->text().size() > 0 &&
+      (resultNow.size() == 0 || check == 0))
+    ui->expression_display->clear();
 }
 
 void MainWindow::ClearAllDeletion() {
@@ -112,10 +114,12 @@ void MainWindow::Operations() {
     new_display = bttnName;
   } else {
     if ((bttnName != "(" && bttnName != ")" && bttnName != "-" &&
-            !new_display.endsWith(bttnName) &&
-            (new_display[new_display.size() - 1].isDigit())) || new_display.endsWith('x') || new_display.endsWith(')')) {
+         !new_display.endsWith(bttnName) &&
+         (new_display[new_display.size() - 1].isDigit())) ||
+        new_display.endsWith('x') || new_display.endsWith(')')) {
       new_display += bttnName;
-    } else if (bttnName == "(" || bttnName == ")" || (bttnName == "-" && !new_display.endsWith('-'))) {
+    } else if (bttnName == "(" || bttnName == ")" ||
+               (bttnName == "-" && !new_display.endsWith('-'))) {
       new_display += bttnName;
     }
   }
@@ -125,7 +129,9 @@ void MainWindow::Operations() {
 void MainWindow::on_divide_released() {
   QString new_display = ui->result_display->text();
 
-  if ((new_display[new_display.size() - 1].isDigit() || new_display.endsWith('x') || new_display.endsWith(')')) && !new_display.endsWith("/")) {
+  if ((new_display[new_display.size() - 1].isDigit() ||
+       new_display.endsWith('x') || new_display.endsWith(')')) &&
+      !new_display.endsWith("/")) {
     ui->result_display->setText(new_display += "/");
   }
 }
@@ -159,7 +165,7 @@ void MainWindow::on_dot_released() {
 void MainWindow::on_val_X_released() {
   QString new_display = ui->result_display->text();
   if ((!new_display[new_display.size() - 1].isDigit() &&
-      !new_display.endsWith("x")) &&
+       !new_display.endsWith("x")) &&
       !(new_display.size() - 1 == 0 && new_display == "0")) {
     ui->result_display->setText(new_display += "x");
   } else if (new_display.size() - 1 == 0 && new_display == "0") {
@@ -167,5 +173,36 @@ void MainWindow::on_val_X_released() {
   }
 }
 
-// после равно сделать проверку на string.contains('x') – если да, вызвать
-// окошко для ввода х
+void MainWindow::on_equals_released() {
+  QString new_display = ui->result_display->text() + '=';
+  ui->result_display->setText(new_display);
+  ui->expression_display->setText(new_display);
+  new_display.chop(1);
+
+  QString valueX = ui->x_val->text();
+
+  QByteArray bit_string = new_display.toLocal8Bit();
+  char *stringForC = bit_string.data();
+  char stringAfterValidation[256] = {0};
+  int error = string_validation(stringForC, stringAfterValidation);
+  if (error) {
+    ui->result_display->setText("Invalid input");
+  } else {
+    calc_stack *first = NULL, *reversed_first = NULL;
+    parser(&first, stringAfterValidation);
+    reversed_first = reverse_stack(&first);
+
+    calc_stack *rpn = NULL, *output = NULL;
+    rpn = polish_stack(&reversed_first);
+    output = reverse_stack(&rpn);
+    if (new_display.contains('x') && valueX != "") {
+      double x_val = valueX.toDouble();  //  создать окно для ввода значения Х
+      stack_with_x(&output, x_val);
+      double res = calc_result(output);
+      ui->result_display->setText(QString::number(res, 'g', 16));
+    } else {
+      double res = calc_result(output);
+      ui->result_display->setText(QString::number(res, 'g', 16));
+    }
+  }
+}

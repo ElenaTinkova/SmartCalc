@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QToolBar>
+#include <QPixmap>
 
 extern "C"{
 #include "../back/data_validation.h"
@@ -34,5 +36,6 @@ private slots:
     void on_f_sqrt_released();
     void on_dot_released();
     void on_val_X_released();
+    void on_equals_released();
 };
 #endif // MAINWINDOW_H

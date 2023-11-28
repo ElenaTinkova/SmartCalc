@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
-    <height>412</height>
+    <width>682</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>412</width>
-    <height>412</height>
+    <height>438</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>690</width>
-    <height>412</height>
+    <width>682</width>
+    <height>438</height>
    </size>
   </property>
   <property name="font">
@@ -66,14 +66,14 @@
    <widget class="QLineEdit" name="result_display">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>9</x>
       <y>70</y>
       <width>391</width>
       <height>61</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -121,7 +121,7 @@
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -162,7 +162,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -203,7 +203,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -244,7 +244,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -288,7 +288,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -329,7 +329,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -355,7 +355,7 @@ QPushButton:pressed {
      <string>=</string>
     </property>
     <property name="shortcut">
-     <string>=</string>
+     <string>Return</string>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -371,7 +371,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -413,7 +413,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -455,7 +455,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -497,7 +497,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -538,7 +538,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -579,7 +579,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -620,7 +620,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -665,7 +665,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -706,7 +706,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -747,7 +747,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -788,7 +788,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -853,7 +853,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -895,7 +895,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -937,7 +937,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -982,7 +982,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1043,7 +1043,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1088,7 +1088,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1133,7 +1133,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1178,7 +1178,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1223,7 +1223,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1268,7 +1268,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1313,7 +1313,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1358,7 +1358,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1403,7 +1403,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1461,7 +1461,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1499,14 +1499,14 @@ QPushButton:pressed {
    <widget class="QPushButton" name="graph">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>9</x>
       <y>350</y>
       <width>108</width>
       <height>48</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1551,7 +1551,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1596,14 +1596,14 @@ QPushButton:pressed {
    <widget class="QLineEdit" name="expression_display">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>30</y>
+      <x>9</x>
+      <y>40</y>
       <width>391</width>
-      <height>48</height>
+      <height>39</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -1611,17 +1611,18 @@ QPushButton:pressed {
     <property name="font">
      <font>
       <family>Rubik</family>
-      <pointsize>16</pointsize>
+      <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-	color: #4E4B78;
+	color: #9593ae;
 	background-color: #F2F1FF;
 	border: 1px transparent;
 	border-radius: 8px;
+	font-size: 14px;
 }</string>
     </property>
     <property name="locale">
@@ -1643,14 +1644,15 @@ QPushButton:pressed {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>420</x>
       <y>30</y>
-      <width>251</width>
-      <height>371</height>
+      <width>250</width>
+      <height>368</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">border: 1px transparent;
+border-radius: 16px;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -1671,8 +1673,179 @@ QPushButton:pressed {
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="x_equals">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>26</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: #5B5B8F;
+	background-color: #F0EFFF;
+	border: 1px transparent;
+	border-radius: 18px;
+}</string>
+    </property>
+    <property name="text">
+     <string>x = </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="x_val">
+    <property name="geometry">
+     <rect>
+      <x>35</x>
+      <y>10</y>
+      <width>125</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #5B5B8F;
+	background-color: #F0EFFF;
+	border-radius: 8px
+}</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>682</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {	
+	border: 1px transparent;
+	background-color: #F0EFFF; 
+	color: #4F4C79; 
+}</string>
+   </property>
+   <widget class="QMenu" name="menuType">
+    <property name="styleSheet">
+     <string notr="true">QMenu {	
+	border: 1px transparent;
+	background-color: #F0EFFF; 
+	color: #4F4C79; 
+}</string>
+    </property>
+    <property name="title">
+     <string>Calc type</string>
+    </property>
+    <addaction name="actionRegular"/>
+    <addaction name="actionDeposit"/>
+    <addaction name="actionCredit"/>
+   </widget>
+   <addaction name="menuType"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar{
+	border: 1px transparent;
+	background-color: #F0EFFF; 
+}
+
+QToolBar QToolButton {
+	margin-left: 8px;
+	margin-top: 6px;
+	font-size: 14px;
+	color: #4F4C79; 
+	border: 1px transparent;
+	border-radius: 8px;
+ 	background-color: #E8E7FC; 
+}
+
+QToolBar QToolButton:hover {
+    background-color: #F5BCB7;
+}
+
+QToolBar QToolButton:pressed {
+	background-color: #BEBBF6;
+}</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionRegular"/>
+   <addaction name="actionDeposit"/>
+   <addaction name="actionCredit"/>
+  </widget>
+  <action name="actionRegular">
+   <property name="text">
+    <string>Regular</string>
+   </property>
+  </action>
+  <action name="actionDeposit">
+   <property name="text">
+    <string>Deposit</string>
+   </property>
+  </action>
+  <action name="actionCredit">
+   <property name="text">
+    <string>Credit</string>
+   </property>
+  </action>
  </widget>
+ <tabstops>
+  <tabstop>but_1</tabstop>
+  <tabstop>but_2</tabstop>
+  <tabstop>but_3</tabstop>
+  <tabstop>but_0</tabstop>
+  <tabstop>dot</tabstop>
+  <tabstop>equals</tabstop>
+  <tabstop>result_display</tabstop>
+  <tabstop>val_X</tabstop>
+  <tabstop>plus</tabstop>
+  <tabstop>minus</tabstop>
+  <tabstop>but_6</tabstop>
+  <tabstop>but_5</tabstop>
+  <tabstop>but_4</tabstop>
+  <tabstop>multiply</tabstop>
+  <tabstop>but_9</tabstop>
+  <tabstop>but_8</tabstop>
+  <tabstop>but_7</tabstop>
+  <tabstop>divide</tabstop>
+  <tabstop>rBrace</tabstop>
+  <tabstop>lBrace</tabstop>
+  <tabstop>f_log</tabstop>
+  <tabstop>f_scale</tabstop>
+  <tabstop>f_ln</tabstop>
+  <tabstop>f_atan</tabstop>
+  <tabstop>f_acos</tabstop>
+  <tabstop>f_asin</tabstop>
+  <tabstop>f_tan</tabstop>
+  <tabstop>f_cos</tabstop>
+  <tabstop>f_sin</tabstop>
+  <tabstop>mod</tabstop>
+  <tabstop>backspace</tabstop>
+  <tabstop>clear</tabstop>
+  <tabstop>graph</tabstop>
+  <tabstop>f_sqrt</tabstop>
+  <tabstop>expression_display</tabstop>
+ </tabstops>
  <resources>
   <include location="icons.qrc"/>
   <include location="hello_puppy.qrc"/>
