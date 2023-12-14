@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>682</width>
-    <height>438</height>
+    <width>412</width>
+    <height>456</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>412</width>
-    <height>438</height>
+    <height>456</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>682</width>
-    <height>438</height>
+    <width>680</width>
+    <height>456</height>
    </size>
   </property>
   <property name="font">
@@ -41,7 +41,7 @@
    <string>Calculator</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="icons.qrc">
+   <iconset>
     <normaloff>:/misc/rus/calculator-172.png</normaloff>:/misc/rus/calculator-172.png</iconset>
   </property>
   <property name="layoutDirection">
@@ -108,7 +108,7 @@
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
     <property name="readOnly">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="but_1">
@@ -394,7 +394,17 @@ QPushButton:pressed {
 </string>
     </property>
     <property name="text">
-     <string>x</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/buttons_icons/x_variable_icon.png</normaloff>:/buttons_icons/x_variable_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>22</width>
+      <height>22</height>
+     </size>
     </property>
     <property name="shortcut">
      <string>X</string>
@@ -825,7 +835,7 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset theme="division_icon" resource="icons.qrc">
-      <normaloff>:/misc/rus/division_icon.png</normaloff>:/misc/rus/division_icon.png</iconset>
+      <normaloff>:/buttons_icons/division_icon.png</normaloff>:/buttons_icons/division_icon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1018,12 +1028,12 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset resource="icons.qrc">
-      <normaloff>:/misc/rus/exponent_icon.png</normaloff>:/misc/rus/exponent_icon.png</iconset>
+      <normaloff>:/buttons_icons/exponent_icon.png</normaloff>:/buttons_icons/exponent_icon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>14</width>
-      <height>14</height>
+      <width>15</width>
+      <height>15</height>
      </size>
     </property>
     <property name="shortcut">
@@ -1436,12 +1446,12 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset resource="icons.qrc">
-      <normaloff>:/misc/rus/backspace_icon_151584.png</normaloff>:/misc/rus/backspace_icon_151584.png</iconset>
+      <normaloff>:/buttons_icons/backspace_icon_151584.png</normaloff>:/buttons_icons/backspace_icon_151584.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>20</width>
-      <height>20</height>
+      <width>23</width>
+      <height>23</height>
      </size>
     </property>
     <property name="shortcut">
@@ -1587,7 +1597,13 @@ QPushButton:pressed {
     </property>
     <property name="icon">
      <iconset resource="icons.qrc">
-      <normaloff>:/misc/rus/square_root_icon.png</normaloff>:/misc/rus/square_root_icon.png</iconset>
+      <normaloff>:/buttons_icons/square_root_icon.png</normaloff>:/buttons_icons/square_root_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>17</width>
+      <height>17</height>
+     </size>
     </property>
     <attribute name="buttonGroup">
      <string notr="true">buttonGroup</string>
@@ -1667,7 +1683,7 @@ border-radius: 16px;</string>
      <enum>Qt::MarkdownText</enum>
     </property>
     <property name="pixmap">
-     <pixmap resource="hello_puppy.qrc">:/hello_puppy.jpeg</pixmap>
+     <pixmap resource="rsrcs/hello_puppy.qrc">:/hello_puppy.jpeg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -1677,37 +1693,41 @@ border-radius: 16px;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>26</width>
+      <y>11</y>
+      <width>22</width>
       <height>19</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-	color: #5B5B8F;
+	color: #4F4C79;
 	background-color: #F0EFFF;
 	border: 1px transparent;
 	border-radius: 18px;
 }</string>
     </property>
     <property name="text">
-     <string>x = </string>
+     <string>x =</string>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/misc/rus/x_variable_icon.png</pixmap>
     </property>
    </widget>
    <widget class="QLineEdit" name="x_val">
     <property name="geometry">
      <rect>
-      <x>35</x>
+      <x>40</x>
       <y>10</y>
-      <width>125</width>
+      <width>161</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
+	font-size: 14px;
 	border: 1px transparent;
-	color: #5B5B8F;
-	background-color: #F0EFFF;
+	color: #4F4C79;
+	background-color: #E8E7FC;
 	border-radius: 8px
 }</string>
     </property>
@@ -1721,7 +1741,7 @@ border-radius: 16px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>682</width>
+     <width>412</width>
      <height>24</height>
     </rect>
    </property>
@@ -1743,7 +1763,6 @@ border-radius: 16px;</string>
     <property name="title">
      <string>Calc type</string>
     </property>
-    <addaction name="actionRegular"/>
     <addaction name="actionDeposit"/>
     <addaction name="actionCredit"/>
    </widget>
@@ -1789,15 +1808,9 @@ QToolBar QToolButton:pressed {
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionRegular"/>
    <addaction name="actionDeposit"/>
    <addaction name="actionCredit"/>
   </widget>
-  <action name="actionRegular">
-   <property name="text">
-    <string>Regular</string>
-   </property>
-  </action>
   <action name="actionDeposit">
    <property name="text">
     <string>Deposit</string>
@@ -1848,7 +1861,7 @@ QToolBar QToolButton:pressed {
  </tabstops>
  <resources>
   <include location="icons.qrc"/>
-  <include location="hello_puppy.qrc"/>
+  <include location="rsrcs/hello_puppy.qrc"/>
  </resources>
  <connections/>
  <buttongroups>

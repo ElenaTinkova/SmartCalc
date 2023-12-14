@@ -5,11 +5,12 @@
 // this func checks if everything ok with the incoming string
 
 int string_validation(char *input, char *string) {
-  if (input == NULL || strlen(input) > 255) return 1;
   int error = 0, float_dot = 0;
-  check_spaces(input, string);
-  if (check_comma_with_dot(string)) error = 1;
-  //  int str_len = strlen(string);
+  if (input == NULL || strlen(input) == 0 || strlen(input) > 255) error = 1;
+  if (!error) {
+    check_spaces(input, string);
+    if (check_comma_with_dot(string)) error = 1;
+  }
   if (!error) error = check_braces(string);
 
   if (!error) {
@@ -202,7 +203,7 @@ int check_mod(char *string, int i) {
   if (!is_number(string[i - 1]) && string[i - 1] != ')' && string[i - 1] != 'x')
     error = 1;
   if (!is_number(string[i + 3]) && string[i + 3] != '(' &&
-      string[i + 3] != 'x' && is_func(string, i + 3))
+      string[i + 3] != 'x' && is_func(string, i + 3) && string[i + 3] != '-')
     error = 1;
   return error;
 }
@@ -235,7 +236,8 @@ int braces(char *string, int i) {
 }
 
 void check_unar(char *string, int i) {
-  if ((i == 0 || string[i - 1] == '(' || is_operator(string[i - 1])) &&
+  if ((i == 0 || string[i - 1] == '(' || is_operator(string[i - 1]) ||
+       is_mod(string, i - 3)) &&
       !is_number(string[i - 1]))
     *(string + i) = '~';
   else

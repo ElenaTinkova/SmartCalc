@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Credit</class>
+ <widget class="QWidget" name="Credit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>560</width>
+    <height>220</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>560</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Credit</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 16pt;
+	font-weight: 400;
+}</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QLineEdit" name="totalAmount">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>21</y>
+     <width>140</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Credit amount</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ternMonth">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>50</y>
+     <width>161</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Credit term (in months)</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="interestRate">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>79</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Interest Rate (in %)</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_percent">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>79</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QDoubleSpinBox::pane {
+	border: 1px transparent;
+	background-color: #F0EFFF;
+	color: #E8E7FC;
+	font-size: 10px;
+}
+
+QDoubleSpinBox{
+	border: 1px transparent;
+	font-size: 14px;
+	color: #4F4C79;
+	border-radius: 8px;
+	background-color: #E8E7FC;
+}
+</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_months">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>50</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSpinBox::pane {
+	border: 1px transparent;
+	background-color: #F0EFFF;
+	color: #E8E7FC;
+	font-size: 10px;
+}
+
+QSpinBox{
+	border: 1px transparent;
+	font-size: 14px;
+	color: #4F4C79;
+	border-radius: 8px;
+	background-color: #E8E7FC;
+}
+</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_amount">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>21</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QDoubleSpinBox::pane {
+	border: 1px transparent;
+	background-color: #F0EFFF;
+	color: #E8E7FC;
+	font-size: 10px;
+}
+
+QDoubleSpinBox{
+	border: 1px transparent;
+	font-size: 14px;
+	color: #4F4C79;
+	border-radius: 8px;
+	background-color: #E8E7FC;
+}
+</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="paymentPerMonth">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>124</y>
+     <width>140</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Monthly payment</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="totalAllPayment">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>140</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Total of all payments</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="totalInterestPaid">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>176</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border: 1px transparent;
+	color: #4F4C79;
+	background-color: #F0EFFF;
+	font-family: Rubik;
+	font-size: 14pt;
+}</string>
+   </property>
+   <property name="text">
+    <string>Interest overpayment</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableCredit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>221</y>
+     <width>521</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView {
+	font-size: 12px;
+	color: #4F4C79;
+	
+}
+
+QHeaderView::section {
+	font-size: 14px;
+	color: #4F4C79;
+}</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>80</number>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="loanCalculation">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>120</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	color: #E6EAFF;
+	background-color:  #5B5B8F;
+	border: 1px transparent;
+	border-radius: 18px;
+}
+
+QPushButton:hover {
+	background-color: #F5BCB7;
+}
+
+QPushButton:pressed {
+	background-color: #4F4F7D;
+}</string>
+   </property>
+   <property name="text">
+    <string>Calculate</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>20</y>
+     <width>121</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QRadioButton" name="annuityType">
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+	color: #4F4C79;
+	font-size: 14px;
+}
+
+QRadioButton:active {
+	color: #4F4C79;
+}</string>
+      </property>
+      <property name="text">
+       <string>Annuity</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QRadioButton" name="differentiatedType">
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+	color: #4F4C79;
+	font-size: 14px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Differentiated</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLineEdit" name="paidInterest">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>176</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 8px;
+	font: Rubik;
+	font-size: 14px;
+}</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="paidMonth">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>124</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 8px;
+	font: Rubik;
+	font-size: 14px;
+}</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="paidAllPayment">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>150</y>
+     <width>151</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	color: #4F4C79;
+	background-color:  #DEDDFC;
+	border: 1px transparent;
+	border-radius: 8px;
+	font: Rubik;
+	font-size: 14px;
+}</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

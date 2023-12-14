@@ -2,6 +2,8 @@
 
 #include <QPixmap>
 
+#include "deposit.h"
+#include "form.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -174,35 +176,54 @@ void MainWindow::on_val_X_released() {
 }
 
 void MainWindow::on_equals_released() {
-  QString new_display = ui->result_display->text() + '=';
-  ui->result_display->setText(new_display);
-  ui->expression_display->setText(new_display);
-  new_display.chop(1);
-
-  QString valueX = ui->x_val->text();
-
-  QByteArray bit_string = new_display.toLocal8Bit();
-  char *stringForC = bit_string.data();
-  char stringAfterValidation[256] = {0};
-  int error = string_validation(stringForC, stringAfterValidation);
-  if (error) {
+  if (ui->result_display->text().size() == 0)
     ui->result_display->setText("Invalid input");
-  } else {
-    calc_stack *first = NULL, *reversed_first = NULL;
-    parser(&first, stringAfterValidation);
-    reversed_first = reverse_stack(&first);
+  else {
+    QString new_display = ui->result_display->text() + '=';
+    if (new_display.endsWith("==")) new_display.chop(1);
+    ui->result_display->setText(new_display);
+    ui->expression_display->setText(new_display);
+    new_display.chop(1);
 
-    calc_stack *rpn = NULL, *output = NULL;
-    rpn = polish_stack(&reversed_first);
-    output = reverse_stack(&rpn);
-    if (new_display.contains('x') && valueX != "") {
-      double x_val = valueX.toDouble();  //  создать окно для ввода значения Х
-      stack_with_x(&output, x_val);
-      double res = calc_result(output);
-      ui->result_display->setText(QString::number(res, 'g', 16));
+    QString valueX = ui->x_val->text();
+
+    QByteArray bit_string = new_display.toLocal8Bit();
+    char *stringForC = bit_string.data();
+    char stringAfterValidation[256] = {0};
+    int error = string_validation(stringForC, stringAfterValidation);
+    if (error) {
+      ui->result_display->setText("Invalid input");
     } else {
-      double res = calc_result(output);
-      ui->result_display->setText(QString::number(res, 'g', 16));
+      if (new_display.contains('x')) {
+        if ((!valueX.toDouble() || valueX == "") && valueX != "0")
+          ui->result_display->setText("Invalid input");
+        else {
+          double x_val = valueX.toDouble();
+          double res = calculations(stringAfterValidation, x_val);
+          ui->result_display->setText(QString::number(res, 'g', 16));
+        }
+      } else {
+        double res = calculations(stringAfterValidation, 0);
+        ui->result_display->setText(QString::number(res, 'g', 16));
+      }
     }
   }
+}
+
+void MainWindow::on_graph_released() {
+  form = new Form;
+  form->show();
+  connect(this, &MainWindow::signalSecondScreen, form, &Form::getExpression);
+  emit signalSecondScreen(ui->result_display->text());
+}
+
+void MainWindow::on_actionCredit_triggered() {
+  credit = new Credit;
+  credit->show();
+}
+
+void MainWindow::on_actionDeposit_triggered() {
+  Deposit wind;
+  wind.setModal(true);
+  wind.exec();
 }

@@ -2,6 +2,13 @@
 
 #include "../back/data_validation.h"
 
+double calculations(char *string, double x) {
+  calc_stack *rpn = NULL;
+  rpn = new_polish_stack(string, x);
+  return calc_result(rpn);
+  ;
+}
+
 void push(calc_stack **stack, double value, int priority, type_t type) {
   calc_stack *top = (calc_stack *)calloc(1, sizeof(calc_stack));
   if (!top)
@@ -25,74 +32,6 @@ void destroy_stack(calc_stack **stack) {
   while (*stack) pop(stack);
 }
 
-void parser(calc_stack **stack, char *string) {
-  while (*string != '\0') {
-    if (is_number(*string)) {
-      char num[256];
-      int lenght = add_number(string, num) - 1;
-      push(stack, atof(num), 0, Number);
-      string += lenght;
-    } else if (*string == 'x')
-      push(stack, 0, 0, X);
-    else if (*string == '+')
-      push(stack, 0, 1, Plus);
-    else if (*string == '-')
-      push(stack, 0, 1, Minus);
-    else if (*string == '~')
-      push(stack, 0, 5, UnarMinus);
-    else if (*string == '*')
-      push(stack, 0, 2, Multiply);
-    else if (*string == '/')
-      push(stack, 0, 2, Division);
-    else if (*string == '^')
-      push(stack, 0, 3, Pow);
-    else if (*string == 'm') {
-      push(stack, 0, 2, Mod);
-      string += 2;
-    } else if (*string == '(')
-      push(stack, 0, 6, Lbrace);
-    else if (*string == ')')
-      push(stack, 0, -1, Rbrace);
-    else if (*string == 's' && *(string + 1) == 'q') {
-      push(stack, 0, 4, Sqrt);
-      string += 3;
-    } else if (*string == 'l' && *(string + 1) == 'n') {
-      push(stack, 0, 4, Ln);
-      string += 1;
-    } else if (*string == 'l' && *(string + 1) == 'o') {
-      push(stack, 0, 4, Log);
-      string += 2;
-    } else if (*string == 's' && *(string + 1) == 'i') {
-      push(stack, 0, 4, Sin);
-      string += 2;
-    } else if (*string == 'c' && *(string + 1) == 'o') {
-      push(stack, 0, 4, Cos);
-      string += 2;
-    } else if (*string == 't' && *(string + 1) == 'a') {
-      push(stack, 0, 4, Tan);
-      string += 2;
-    } else if (*string == 'a' && *(string + 1) == 's') {
-      push(stack, -1, 4, Asin);
-      string += 3;
-    } else if (*string == 'a' && *(string + 1) == 'c') {
-      push(stack, 0, 4, Acos);
-      string += 3;
-    } else if (*string == 'a' && *(string + 1) == 't') {
-      push(stack, 0, 4, Atan);
-      string += 3;
-    }
-    string++;
-  }
-}
-
-void print_stack(calc_stack *stack) {
-  while (stack != NULL) {
-    printf("Значение: %f, Приоритет: %d, Тип: %d\n", stack->value,
-           stack->priority, stack->data_type);
-    stack = stack->next;
-  }
-}
-
 int add_number(char *string, char *num) {
   int num_len = 0;
   while (is_number(*string) || *string == '.') {
@@ -113,39 +52,39 @@ calc_stack *reverse_stack(calc_stack **stack) {
   return new;
 }
 
-calc_stack *polish_stack(calc_stack **stack) {
+calc_stack *new_polish_stack(char *string, double x) {
   calc_stack *output = NULL;
   calc_stack *operators = NULL;
-  while (*stack) {
-    if ((*stack)->data_type == Number || (*stack)->data_type == X)
-      push(&output, (*stack)->value, (*stack)->priority, (*stack)->data_type);
-    else if ((*stack)->data_type == Lbrace)
+  while (*string != '\0') {
+    if (is_number(*string)) {
+      char num[256];
+      int lenght = add_number(string, num) - 1;
+      push(&output, atof(num), 0, Number);
+      string += lenght;
+    } else if (*string == 'x')
+      push(&output, x, 0, Number);
+    else if (*string == '(')
       push(&operators, 0, 6, Lbrace);
-    else if (((*stack)->data_type >= 2 && (*stack)->data_type < 17) ||
-             (*stack)->data_type == UnarMinus) {
+    else if (is_operator(*string) || is_funcs(*string)) {
       if (operators == NULL || operators->data_type == Lbrace)
-        push(&operators, (*stack)->value, (*stack)->priority,
-             (*stack)->data_type);
-      else if ((*stack)->data_type == UnarMinus)
-        push(&operators, (*stack)->value, (*stack)->priority,
-             (*stack)->data_type);
+        string += push_operators_and_functions(string, &operators);
+      else if (*string == '~')
+        push(&operators, 0, 5, UnarMinus);
       else {
-        if ((*stack)->priority > operators->priority)
-          push(&operators, (*stack)->value, (*stack)->priority,
-               (*stack)->data_type);
+        int precendence = math_precendence(*string);
+        if (precendence > operators->priority)
+          string += push_operators_and_functions(string, &operators);
         else {
-          while (operators != NULL &&
-                 (*stack)->priority <= operators->priority &&
+          while (operators != NULL && precendence <= operators->priority &&
                  operators->data_type != Lbrace) {
             push(&output, operators->value, operators->priority,
                  operators->data_type);
             pop(&operators);
           }
-          push(&operators, (*stack)->value, (*stack)->priority,
-               (*stack)->data_type);
+          string += push_operators_and_functions(string, &operators);
         }
       }
-    } else if ((*stack)->data_type == Rbrace) {
+    } else if (*string == ')') {
       while (operators != NULL && operators->data_type != Lbrace) {
         push(&output, operators->value, operators->priority,
              operators->data_type);
@@ -153,15 +92,88 @@ calc_stack *polish_stack(calc_stack **stack) {
       }
       pop(&operators);
     }
-    pop(stack);
+    string++;
   }
   while (operators) {
     push(&output, operators->value, operators->priority, operators->data_type);
     pop(&operators);
   }
-  destroy_stack(stack);
   destroy_stack(&operators);
-  return output;
+  calc_stack *res = reverse_stack(&output);
+  return res;
+}
+
+int is_funcs(char symb) {
+  const char *function = "cstmal";
+  return strchr(function, symb) != NULL ? 1 : 0;
+}
+
+int math_precendence(char symb) {
+  int precendence = 0;
+  if (symb == '+' || symb == '-')
+    precendence = 1;
+  else if (symb == '*' || symb == '/' || symb == 'm')
+    precendence = 2;
+  else if (symb == '^')
+    precendence = 3;
+  else if (symb == 'c' || symb == 's' || symb == 't' || symb == 'a' ||
+           symb == 'l')
+    precendence = 4;
+  else if (symb == '~')
+    precendence = 5;
+  return precendence;
+}
+
+int push_operators_and_functions(char *string, calc_stack **stack) {
+  int len = 0;
+  if (*string == '+')
+    push(stack, 0, 1, Plus);
+  else if (*string == '-')
+    push(stack, 0, 1, Minus);
+  else if (*string == '~')
+    push(stack, 0, 5, UnarMinus);
+  else if (*string == '*')
+    push(stack, 0, 2, Multiply);
+  else if (*string == '/')
+    push(stack, 0, 2, Division);
+  else if (*string == '^')
+    push(stack, 0, 3, Pow);
+  else if (*string == 'm') {
+    push(stack, 0, 2, Mod);
+    len += 2;
+  } else if (*string == '(')
+    push(stack, 0, 6, Lbrace);
+  else if (*string == ')')
+    push(stack, 0, -1, Rbrace);
+  else if (*string == 's' && *(string + 1) == 'q') {
+    push(stack, 0, 4, Sqrt);
+    len += 3;
+  } else if (*string == 'l' && *(string + 1) == 'n') {
+    push(stack, 0, 4, Ln);
+    len += 1;
+  } else if (*string == 'l' && *(string + 1) == 'o') {
+    push(stack, 0, 4, Log);
+    len += 2;
+  } else if (*string == 's' && *(string + 1) == 'i') {
+    push(stack, 0, 4, Sin);
+    len += 2;
+  } else if (*string == 'c' && *(string + 1) == 'o') {
+    push(stack, 0, 4, Cos);
+    len += 2;
+  } else if (*string == 't' && *(string + 1) == 'a') {
+    push(stack, 0, 4, Tan);
+    len += 2;
+  } else if (*string == 'a' && *(string + 1) == 's') {
+    push(stack, -1, 4, Asin);
+    len += 3;
+  } else if (*string == 'a' && *(string + 1) == 'c') {
+    push(stack, 0, 4, Acos);
+    len += 3;
+  } else if (*string == 'a' && *(string + 1) == 't') {
+    push(stack, 0, 4, Atan);
+    len += 3;
+  }
+  return len;
 }
 
 double calc_result(calc_stack *rpn) {
@@ -252,14 +264,4 @@ double unary_operation(double a, int type) {
   else if (type == Log)
     a = log10(a);
   return a;
-}
-
-void stack_with_x(calc_stack **stack, double x) {
-  while (*stack) {
-    if ((*stack)->data_type == X) {
-      (*stack)->value = x;
-      (*stack)->data_type = Number;
-    }
-    stack = &(*stack)->next;
-  }
 }

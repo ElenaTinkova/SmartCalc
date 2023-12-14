@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>hello_puppy.jpeg</file>
+        <file>calculator_icon.icns</file>
+        <file>Rubik-Regular.ttf</file>
+    </qresource>
+</RCC>

@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QToolBar>
 #include <QPixmap>
+#include "form.h"
+#include "credit.h"
+#include "deposit.h"
 
 extern "C"{
 #include "../back/data_validation.h"
@@ -24,6 +27,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Form *form;
+    Credit *credit;
+    Deposit *deposit;
 
 private slots:
     void NumPressed();
@@ -37,5 +43,13 @@ private slots:
     void on_dot_released();
     void on_val_X_released();
     void on_equals_released();
+    void on_graph_released();
+
+    void on_actionCredit_triggered();
+
+    void on_actionDeposit_triggered();
+
+signals:
+    void signalSecondScreen(QString);
 };
 #endif // MAINWINDOW_H

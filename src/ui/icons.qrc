@@ -1,10 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>../../misc/rus/backspace_icon_151584.png</file>
-        <file>../../misc/rus/calculator-172.png</file>
-        <file>../../misc/rus/division_icon.png</file>
-        <file>../../misc/rus/plus_minus_icon.png</file>
-        <file>../../misc/rus/square_root_icon.png</file>
-        <file>../../misc/rus/exponent_icon.png</file>
+        <file>../buttons_icons/x_variable_icon.png</file>
+        <file>../buttons_icons/exponent_icon.png</file>
+        <file>../buttons_icons/square_root_icon.png</file>
+        <file>../buttons_icons/plus_minus_icon.png</file>
+        <file>../buttons_icons/division_icon.png</file>
+        <file>../buttons_icons/backspace_icon_151584.png</file>
+        <file>../buttons_icons/calculator-172.png</file>
     </qresource>
 </RCC>
