@@ -49,7 +49,7 @@ If you want to plot a graph of the function, press a _graph_ button:
 
 ---
 
-This application also contains two additional modes: 
+This application also contains loan additional mode: 
 1. __Loan__ (credit) calculator
 - An annuity loan (a loan with constant repayment installments):
 
@@ -62,6 +62,9 @@ This application also contains two additional modes:
 
 <br>
 
-2. __Deposit__ profitability calculator:
+---
 
-![differential](images/deposit.png)
+This project was developed with:
+ * C language
+ * GUI implementation based on Qt
+ * Plotting graphs via QCustomPlot

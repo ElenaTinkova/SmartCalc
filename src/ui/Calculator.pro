@@ -11,10 +11,8 @@ CONFIG += c++17
 SOURCES += \
     ../back/credit_calc.c \
     ../back/data_validation.c \
-    ../back/deposit_calc.c \
     ../back/stack.c \
     credit.cpp \
-    deposit.cpp \
     form.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,14 +23,12 @@ HEADERS += \
     ../back/extra_calcs.h \
     ../back/stack.h \
     credit.h \
-    deposit.h \
     form.h \
     mainwindow.h \
     qcustomplot.h
 
 FORMS += \
     credit.ui \
-    deposit.ui \
     form.ui \
     mainwindow.ui
 

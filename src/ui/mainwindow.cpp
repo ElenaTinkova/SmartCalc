@@ -2,7 +2,6 @@
 
 #include <QPixmap>
 
-#include "deposit.h"
 #include "form.h"
 #include "ui_mainwindow.h"
 
@@ -222,8 +221,3 @@ void MainWindow::on_actionCredit_triggered() {
   credit->show();
 }
 
-void MainWindow::on_actionDeposit_triggered() {
-  Deposit wind;
-  wind.setModal(true);
-  wind.exec();
-}

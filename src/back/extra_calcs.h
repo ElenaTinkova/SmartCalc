@@ -39,44 +39,6 @@ typedef struct credit_calc {
   double monthly_payment;
 } credit_output;
 
-/*!
- * \brief Structure for working with input and output data of deposit
- * \param input_summ deposit amount
- * \param temp_of_placement placement term
- * \param percent interest rate
- * \param tax_rate tax rate
- * \param frequency_of_payments payment frequency
- * \param capitalization_of_interest interest capitalization
- * \param list_of_deposits list of deposits of funds
- * \param list_of_partial_withdrawals list of partial withdrawals
- * \param accrued_interest accrued interest
- * \param result_summ amount on the deposit at the end of the term
- * \param tax_amount tax amount for deduction
- */
-typedef struct deposit_info {
-  double input_summ;
-  int temp_of_placement;
-  double percent;
-  double tax_rate;
-  int frequency_of_payments;
-  double capitalization_of_interest;
-  double list_of_deposits;
-  double list_of_partial_withdrawals;
-
-  double accrued_interest;
-  double result_summ;
-  double tax_amount;
-} deposit_info;
-
-/*!
- * \brief Structure for working with deposits and withdrawals in the deposit settlement
- * \param plus_value deposit amount
- * \param minus_value withdrawal amount
- */
-typedef struct Month {
-  double plus_value;
-  double minus_value;
-} Month;
 
 /*!
  * \brief Calculates annuity credit
@@ -84,16 +46,5 @@ typedef struct Month {
  * \return returns a structure containing data on overpayment on the loan, monthly payment, and total payments on the loan
  */
 credit_output annuity_calculations(credit_input data);
-
-/*!
- * \brief Calculates deposit
- * \param dep pointer to the deposit_info structure containing information about
- * the deposit 
- * \param months pointer to an array of Month structures representing
- * months 
- * \return returns 1 on successful calculation, 0 in case of error, 3 -
- * impossible operations with zero
- */
-int deposit_calculation(struct deposit_info *dep, Month *months);
 
 #endif

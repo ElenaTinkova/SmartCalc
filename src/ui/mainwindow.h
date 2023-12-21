@@ -6,7 +6,6 @@
 #include <QPixmap>
 #include "form.h"
 #include "credit.h"
-#include "deposit.h"
 
 extern "C"{
 #include "../back/data_validation.h"
@@ -29,7 +28,6 @@ private:
     Ui::MainWindow *ui;
     Form *form;
     Credit *credit;
-    Deposit *deposit;
 
 private slots:
     void NumPressed();
@@ -46,8 +44,6 @@ private slots:
     void on_graph_released();
 
     void on_actionCredit_triggered();
-
-    void on_actionDeposit_triggered();
 
 signals:
     void signalSecondScreen(QString);

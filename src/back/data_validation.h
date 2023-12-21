@@ -8,16 +8,7 @@
  * (sine, cosine, logarithm, etc.). \n
  *   Besides calculating expressions, it supports
  * the usage of the x variable and the graphing of the corresponding function.
- * \n Also it has a credit and deposit calculator's modes.
- *
- * This project was developed with:
- * 1. C language
- * 2. GUI implementation based on Qt
- * 3. Plotting graphs via QCustomPlot
- * 4. Makefile
- * 5. Doxygen
- *
- * \author naginisa
+ * \n Also it has a credit calculator's mode.
  */
 
 /*!
@@ -135,7 +126,7 @@ int is_mod(char *string, int i);
 int check_mod(char *string, int i);
 
 /*!
- * \brief Проверяет корректность записи переменной 'x' в строке
+ * \brief Checks the correctness of x value in operation  'x' в строке
  * \param string string-expression
  * \param i index of the current symbol in the string
  * \return returns 1 in case of an error, 0 - if there is no error

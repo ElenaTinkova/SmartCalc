@@ -39,14 +39,10 @@ clean:
 	@rm -rf *.a *.gcno *.gcda *.gcov *.info report_gcov html_report calc_cover
 
 
-dvi:
-	$(OPEN) ../documentation.pdf
-
-
 dist:
 	@mkdir -p $(DIR_DIST)
 	@cp -R back ui ../images buttons_icons $(DIR_DIST)
-	@cp Makefile ../documentation.pdf $(DIR_DIST)
+	@cp Makefile $(DIR_DIST)
 	@tar --totals -cvf $(DIR_DIST).tar $(DIR_DIST)
 	@rm -rf $(DIR_DIST)
 

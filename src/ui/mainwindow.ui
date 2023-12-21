@@ -1763,7 +1763,6 @@ border-radius: 16px;</string>
     <property name="title">
      <string>Calc type</string>
     </property>
-    <addaction name="actionDeposit"/>
     <addaction name="actionCredit"/>
    </widget>
    <addaction name="menuType"/>
@@ -1808,14 +1807,8 @@ QToolBar QToolButton:pressed {
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionDeposit"/>
    <addaction name="actionCredit"/>
   </widget>
-  <action name="actionDeposit">
-   <property name="text">
-    <string>Deposit</string>
-   </property>
-  </action>
   <action name="actionCredit">
    <property name="text">
     <string>Credit</string>
@@ -1860,8 +1853,8 @@ QToolBar QToolButton:pressed {
   <tabstop>expression_display</tabstop>
  </tabstops>
  <resources>
-  <include location="icons.qrc"/>
   <include location="rsrcs/hello_puppy.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
  <buttongroups>
